@@ -1,4 +1,4 @@
-# 2. Responsible AI (unaddressed)
+# 6. Responsible AI (unaddressed)
 
 **Status:** No AI in code; major unaddressed design domain.
 

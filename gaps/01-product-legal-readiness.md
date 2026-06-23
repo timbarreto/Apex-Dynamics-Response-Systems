@@ -1,4 +1,4 @@
-# 14. Real product/legal readiness unresolved
+# 1. Real product/legal readiness unresolved
 
 **Status:** Prototype branding and fictional scenario remain embedded.
 

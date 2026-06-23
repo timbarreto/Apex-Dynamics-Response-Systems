@@ -1,4 +1,4 @@
-# 7. No observability or operational runbooks
+# 9. No observability or operational runbooks
 
 **Status:** No production telemetry, alerting, or operating model.
 

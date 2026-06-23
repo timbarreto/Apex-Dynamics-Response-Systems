@@ -1,4 +1,4 @@
-# 3. Supply chain / npm risk (no scanning)
+# 11. Supply chain / npm risk (no scanning)
 
 **Status:** No supply-chain controls; pipeline holds privileged tokens.
 

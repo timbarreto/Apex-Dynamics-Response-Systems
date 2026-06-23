@@ -1,4 +1,4 @@
-# 12. Accessibility and operator usability not certified
+# 13. Accessibility and operator usability not certified
 
 **Status:** Some accessibility affordances exist; no formal validation.
 

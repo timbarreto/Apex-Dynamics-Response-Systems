@@ -1,4 +1,4 @@
-# 9. Data governance, privacy, and retention undefined
+# 5. Data governance, privacy, and retention undefined
 
 **Status:** No data classification or privacy model.
 

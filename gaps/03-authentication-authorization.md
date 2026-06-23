@@ -1,4 +1,4 @@
-# 1. Authentication & authorization (absent)
+# 3. Authentication & authorization (absent)
 
 **Status:** Unbuilt — largest missing domain.
 

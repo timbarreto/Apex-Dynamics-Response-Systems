@@ -1,4 +1,4 @@
-# 8. Browser and edge security hardening absent
+# 12. Browser and edge security hardening absent
 
 **Status:** No security headers or browser policy controls.
 

@@ -1,4 +1,4 @@
-# 10. Reliability under degraded data is not designed
+# 8. Reliability under degraded data is not designed
 
 **Status:** Mock data is always available and internally consistent.
 

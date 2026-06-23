@@ -1,4 +1,4 @@
-# 5. No command authorization / approval chain
+# 4. No command authorization / approval chain
 
 **Status:** Dispatch is an instant, self-authorizing click.
 
@@ -16,5 +16,5 @@ A real command center needs:
 - **Full audit trail** (requester, approver, timestamp, justification) — the
   `SignalEvent` model has no such fields.
 
-This layer sits on top of identity (#1) and a backend (#4) and cannot exist
-without them.
+This layer sits on top of identity (#3) and a backend/ingestion layer (#7) and
+cannot exist without them.

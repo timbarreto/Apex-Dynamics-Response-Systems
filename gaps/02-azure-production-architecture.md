@@ -1,4 +1,4 @@
-# 6. No Azure production architecture
+# 2. No Azure production architecture
 
 **Status:** Static demo deployment only; no production hosting design.
 

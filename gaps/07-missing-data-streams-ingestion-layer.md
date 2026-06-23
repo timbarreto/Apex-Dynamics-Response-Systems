@@ -1,4 +1,4 @@
-# 4. Missing data streams / no ingestion layer
+# 7. Missing data streams / no ingestion layer
 
 **Status:** Every "live" element is a local timer over mock data, not a feed.
 
@@ -14,7 +14,8 @@ ingested state:
   freshness/offline handling.
 - **Incident reports** (CAD / 911) — not modeled at all.
 - **Public social signals** — real ingestion (geotag, dedup, credibility);
-  the prompt-injection/bias surface from #2–#3.
+  the prompt-injection/bias surface from Responsible AI (#6) and supply chain
+  controls (#11).
 - **Imagery** (satellite/drone + CV damage overlays) — claimed but absent.
 - **Resource/asset management** — replaces the static dispatch panel with live
   unit/fleet state and two-way commit.
