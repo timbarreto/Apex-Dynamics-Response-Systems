@@ -13,4 +13,6 @@ createRoot(document.getElementById('root')!).render(
 // Greet anyone who opens the dev console. Runs client-side, and is gated behind
 // `import.meta.env.DEV` so it only prints on the local dev server, never in a
 // production build.
-import.meta.env.DEV && printBootBanner()
+if (import.meta.env.DEV) {
+  printBootBanner()
+}

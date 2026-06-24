@@ -1,0 +1,18 @@
+# CODEOWNERS for Titan Watch
+#
+# Review requirements for sensitive paths. These owner handles are PLACEHOLDERS;
+# replace them with real GitHub team or user handles before enabling branch
+# protection that enforces code owner review.
+#
+# Ownership is enforced only when a branch protection rule or repository ruleset
+# on `main` requires review from code owners (see .github/rulesets/main-protection.json
+# and docs/release-checklist.md).
+
+# Application state and command/authorization logic.
+/src/state/**            @apex-dynamics/security @apex-dynamics/maintainers
+
+# Mock data, domain types, and ingestion shapes.
+/src/mock/**             @apex-dynamics/security @apex-dynamics/maintainers
+
+# CI/CD and deployment workflows (privileged Pages deploy).
+/.github/workflows/**    @apex-dynamics/security @apex-dynamics/maintainers

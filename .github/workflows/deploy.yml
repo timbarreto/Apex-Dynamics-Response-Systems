@@ -1,18 +1,17 @@
 name: Deploy to GitHub Pages
 
-# Build the Vite app and publish dist/ to GitHub Pages on every push to the
-# default branch or the active feature branch, so the deploy can be exercised
-# before merge. Manual runs are also supported via the Actions tab.
+# Build the Vite app and publish dist/ to GitHub Pages on pushes to the default
+# branch only. Manual runs are also supported via the Actions tab. Privileged
+# Pages deploys must never be triggerable from a feature branch.
 on:
   push:
-    branches: [main, amiedansby/RAI]
+    branches: [main]
   workflow_dispatch:
 
-# Allow the GITHUB_TOKEN to publish to Pages and verify the deployment.
+# Least-privilege at the workflow scope: read-only by default. The elevated
+# Pages permissions are granted only to the deploy job below.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # Only one Pages deployment at a time; let an in-progress run finish.
 concurrency:
@@ -22,12 +21,15 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # The build job only needs to read the repository; no Pages access here.
+    permissions:
+      contents: read
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           cache: npm
@@ -55,20 +57,25 @@ jobs:
           echo "OK: workshop/ is not in the published output."
 
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
           path: dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    # Elevated permissions are scoped to this job only: publish to Pages and
+    # mint the OIDC token used to verify the deployment.
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5

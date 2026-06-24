@@ -1,0 +1,23 @@
+# Dependabot keeps dependencies current and surfaces security advisories early.
+# Weekly cadence balances signal against PR noise for this prototype.
+version: 2
+updates:
+  # Application and tooling dependencies declared in package.json / package-lock.json.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    labels:
+      - dependencies
+      - npm
+
+  # GitHub Actions referenced by the workflows under .github/workflows/.
+  # Dependabot updates the pinned commit SHAs while preserving the version comment.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    labels:
+      - dependencies
+      - github-actions
