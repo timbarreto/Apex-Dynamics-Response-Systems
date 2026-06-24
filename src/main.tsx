@@ -10,7 +10,7 @@ createRoot(document.getElementById('root')!).render(
   </StrictMode>,
 )
 
-// Greet anyone who opens the dev console. Runs client-side, so it works on both
-// the local dev server and the deployed site. Swap to `import.meta.env.DEV &&`
-// to keep it local-only.
-printBootBanner()
+// Greet anyone who opens the dev console. Runs client-side, and is gated behind
+// `import.meta.env.DEV` so it only prints on the local dev server, never in a
+// production build.
+import.meta.env.DEV && printBootBanner()

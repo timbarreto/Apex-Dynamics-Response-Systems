@@ -1,4 +1,4 @@
-// Centralized live state for the Kaiju Defense Network command center.
+// Centralized live state for the Titan Watch command center.
 //
 // A single 1000ms interval drives the wall clock and roster ticks; a separate
 // Poisson-like scheduler feeds the Signal Feed. Threat condition/level are
